@@ -1,0 +1,68 @@
+.content {
+  display: flex;
+}
+
+.sideBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #8f621b;
+  width: 18%;
+  height: 100%;
+  z-index: 1;
+}
+
+.routes {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem 0;
+  width: 82%;
+  margin: 6rem 0 5rem 18%;
+  padding: 0 2%;
+}
+.loginLogout {
+  position: sticky;
+  top: 6rem;
+  font-size: 1.8rem;
+  color: #fff;
+  align-self: flex-end;
+  background-color: #8f621b;
+  padding: 8px 24px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.loginLogout:hover {
+  background-color: #52380f;
+}
+
+@media only screen and (max-width: 992px) {
+  .sideBar {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0, 1.5, 1, 1.5);
+    left: auto;
+    right: 0;
+    width: 300px;
+    padding-top: 24px;
+  }
+  .routes {
+    width: 90%;
+    margin: 15rem auto;
+  }
+  .loginLogout {
+    display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+  .sideBar {
+    width: 100%;
+  }
+}
+
+.display {
+  visibility: visible;
+  opacity: 1;
+}

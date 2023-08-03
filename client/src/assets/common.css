@@ -1,0 +1,383 @@
+.formContainer {
+  width: 50%;
+  min-width: 345px;
+  margin: 2.4rem auto;
+}
+
+.row:not(.cancelForm) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem 1.2rem;
+  padding: 1.8rem;
+  font-size: 1.8rem;
+}
+
+.isManager {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+  padding: 1.8rem;
+  font-size: 1.8rem;
+}
+
+input:not(.upload, [type="checkbox"]),
+select {
+  padding: 1.2rem 0.8rem;
+  border: 1px solid #8f621b;
+  border-radius: 0.4rem;
+  width: 100%;
+}
+input[type="checkbox"] {
+  transform: scale(1.4);
+}
+
+.deleteOptions {
+  display: flex;
+  justify-content: center;
+  gap: 0 1.2rem;
+  margin-top: 50px;
+}
+.delete h4 {
+  color: #8f621b;
+  font-size: 2.4rem;
+  text-align: center;
+}
+.deleteBtn {
+  background-color: red;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+.deleteBtn:hover {
+  background-color: #800b0b !important;
+}
+
+.cancelForm {
+  position: sticky;
+  top: 3%;
+  text-align: end;
+  cursor: pointer;
+  color: red;
+  font-size: 2.4rem !important;
+  margin: 1.2rem 1.2rem 0 0;
+}
+
+.error {
+  font-size: 1.8rem;
+  color: red;
+  text-align: center;
+}
+.react-datepicker {
+  font-size: 1.4rem !important;
+}
+
+.react-datepicker__current-month {
+  font-size: 1.8rem !important;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  margin: 1rem !important;
+}
+
+input:disabled {
+  background-color: lightgray;
+  border: none;
+  color: #000;
+}
+
+.register {
+  text-align: center;
+}
+.register a {
+  transition: all 0.2s;
+}
+.register a:hover {
+  color: #8f621b;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem 0;
+}
+.table {
+  table-layout: fixed;
+  font-family: "Rubik", sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+}
+.report {
+  width: 100%;
+  min-width: 345px;
+  margin: 15rem auto 5rem;
+  border-collapse: collapse;
+  font-family: "Rubik", sans-serif;
+}
+.bold {
+  font-weight: bold;
+}
+
+.tableContainer {
+  max-height: 290px;
+  min-height: 100px;
+  overflow: scroll;
+}
+.tableContainer::-webkit-scrollbar {
+  height: 15px;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
+
+.tableSearch {
+  align-self: center;
+}
+
+.window,
+.delete {
+  width: 30%;
+  min-width: 383px;
+  position: fixed;
+  background-color: #fff;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+.window {
+  height: 80vh;
+  overflow-y: scroll;
+}
+.delete {
+  padding: 2.4rem;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #8f621b;
+  box-shadow: 0 0 10px #8f621b;
+}
+
+td,
+th {
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  width: 250px;
+  text-align: start;
+}
+
+th {
+  background-color: #8f621b;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.addBtnContainer {
+  align-self: center;
+  width: 200px;
+}
+
+.darken {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+}
+
+.vacationsTab,
+.sidebarNavLinks,
+.requestVacation,
+.vacationsTabHeadline,
+.vacationTitle {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0 1.8rem;
+  padding: 1.8rem;
+  transition: background-color 0.2s;
+  color: #fff;
+}
+.vacationTitle {
+  padding: 0;
+  position: relative;
+}
+
+.sidebarNavLinks:hover,
+.vacationsTab:hover {
+  background-color: #52380f;
+}
+
+.requestVacation:hover,
+.vacationsTabHeadline:hover {
+  background-color: #8f621b;
+  border-radius: 2px;
+}
+
+.icon {
+  width: 3rem !important;
+  height: 3rem !important;
+  color: #fff;
+}
+
+.vacationsTabs {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s linear;
+  width: 200px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: #52380f;
+  border-radius: 2px;
+}
+.animate {
+  visibility: visible;
+  opacity: 1;
+}
+.contact {
+  display: flex;
+}
+
+.infos {
+  font-size: 1.8rem;
+  background-color: #8f621b;
+  border-top-left-radius: 18px;
+}
+
+.infos div {
+  color: #fff;
+  padding: 1.6rem;
+  border-bottom: 1px solid #fff;
+}
+
+.companyImg {
+  width: 100%;
+  height: 100%;
+  border-top-right-radius: 18px;
+}
+.first {
+  margin-bottom: 5rem;
+}
+.first,
+.second {
+  display: flex;
+  gap: 0 5rem;
+}
+.firstLeft,
+.secondLeft {
+  width: 70%;
+}
+.firstLeft h3,
+.secondLeft h3,
+.secondRight h3 {
+  font-size: 2.4rem;
+  color: #8f621b;
+}
+.firstLeft p,
+.secondLeft p,
+.secondRight p {
+  font-size: 1.6rem;
+  margin: 1.2rem 0;
+  line-height: 1.5;
+}
+.firstRight img {
+  width: 100%;
+}
+
+.firstRight,
+.secondRight {
+  width: 60%;
+  height: 100%;
+}
+.mobileNavContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.mobileNav {
+  position: fixed;
+  cursor: pointer;
+  display: none;
+  border-radius: 5px;
+  z-index: 2;
+  height: 30px;
+  top: 7%;
+  right: 7%;
+}
+.mobileNav div {
+  width: 30px;
+  height: 5px;
+  margin-bottom: 5px;
+}
+.message {
+  font-size: 2.4rem;
+  text-align: center;
+  color: #8f621b;
+}
+@media only screen and (max-width: 992px) {
+  .window {
+    left: 50%;
+  }
+  .vacationsTabs {
+    left: auto;
+    right: 50%;
+  }
+
+  .sidebarNavLinks,
+  .vacationsTab {
+    padding-left: 4rem;
+  }
+  .mobileNav {
+    display: flex;
+  }
+  .delete {
+    left: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .first,
+  .second {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .firstLeft,
+  .secondLeft,
+  .firstRight,
+  .secondRight {
+    width: 100%;
+    margin: 3rem 0;
+  }
+  .contact {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .vacationsTabs {
+    right: auto;
+    left: 50%;
+  }
+  .formContainer,
+  .window,
+  .delete {
+    width: 100% !important;
+    min-width: auto;
+  }
+}
