@@ -19,9 +19,10 @@ const fs = require("fs");
 app.use(bodyParser.json());
 // app.use(cors({ origin: "https://shoushclient.herokuapp.com" }));
 app.use(cors({
- origin : ["https://emp-dashboard-client.vercel.app/"],
+ origin : ["https://emp-dashboard-client.vercel.app"],
   methods:["POST","GET"],
   credentials: true
+ 
 }));
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
