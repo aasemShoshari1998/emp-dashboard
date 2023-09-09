@@ -17,7 +17,12 @@ require("dotenv").config();
 const fs = require("fs");
 
 app.use(bodyParser.json());
-app.use(cors({ origin: "https://emp-dashboard-client.vercel.app" }));
+app.use(cors({ 
+  origin: ["https://emp-dashboard-client.vercel.app"],
+  methods:["POST","GET"],
+  credentials:true
+
+}));
 
 
 
