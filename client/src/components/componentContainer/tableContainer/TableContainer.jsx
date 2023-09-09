@@ -39,11 +39,11 @@ function TableContainer({ table }) {
       if (table === "Employee") {
         setData(employees);
       } else if (table === "Salary") {
-        const response = await fetch("http://localhost:8000/get-salaries");
+        const response = await fetch("emp-dashboard-api.vercel.app/get-salaries");
         const data = await response.json();
         setData(data);
       } else if (table === "Vacation") {
-        const response = await fetch("http://localhost:8000/get-vacations");
+        const response = await fetch("emp-dashboard-api.vercel.app/get-vacations");
         const data = await response.json();
         setData(data);
       }
@@ -61,13 +61,13 @@ function TableContainer({ table }) {
 
   const handleApprove = (e, vacationId) => {
     if (e.target.value === "approve") {
-      fetch(`http://localhost:8000/approve-vacation/${vacationId}`, {
+      fetch(`emp-dashboard-api.vercel.app/approve-vacation/${vacationId}`, {
         method: "POST",
       }).then(() => {
         setComponentShouldUpdate(!componentShouldUpdate);
       });
     } else {
-      fetch(`http://localhost:8000/reject-vacation/${vacationId}`, {
+      fetch(`emp-dashboard-api.vercel.app/reject-vacation/${vacationId}`, {
         method: "POST",
       }).then(() => {
         setComponentShouldUpdate(!componentShouldUpdate);
