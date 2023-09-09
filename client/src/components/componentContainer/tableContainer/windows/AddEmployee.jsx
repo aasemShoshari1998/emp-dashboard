@@ -91,7 +91,7 @@ function AddEmployee({ setAddEmployee }) {
       };
       dispatch({ type: "DARKEN", payload: false });
 
-      fetch("http://localhost:8000/add-employee", {
+      fetch("emp-dashboard-api.vercel.app/add-employee", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
