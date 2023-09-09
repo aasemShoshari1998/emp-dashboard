@@ -18,6 +18,9 @@ const fs = require("fs");
 
 app.use(bodyParser.json());
 
+app.use(cors({
+    origin: 'https://emp-dashboard-client.vercel.app'
+}));
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/upload", upload.array("files"), async (req, res) => {
