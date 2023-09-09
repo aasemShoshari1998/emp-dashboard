@@ -16,8 +16,6 @@ function Edit({ content, table, setEdit, state, updateState }) {
     table === "Employee"
       ? await fetch("https://emp-dashboard-api.vercel.app/edit-employee", {
           method: "POST",
-                mode: "no-cors",
-
           headers: {
             "Content-type": "application/json",
           },
@@ -28,8 +26,6 @@ function Edit({ content, table, setEdit, state, updateState }) {
         })
       : await fetch("https://emp-dashboard-api.vercel.app/edit-salary", {
           method: "POST",
-                mode: "no-cors",
-
           headers: {
             "Content-type": "application/json",
           },
