@@ -18,15 +18,12 @@ const fs = require("fs");
 
 app.use(bodyParser.json());
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // '*' allows any origin, you can restrict it to specific origins
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  next();
-});
+const corsOptions = {
+  origin: 'emp-dashboard-client.vercel.app',
+  credentials: true,
+}
+
+app.use(cors(corsOptions))
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/upload", upload.array("files"), async (req, res) => {
