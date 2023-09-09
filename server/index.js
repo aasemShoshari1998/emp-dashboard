@@ -20,7 +20,11 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: ["https://emp-dashboard-client.vercel.app"],
+    origin: [
+      "https://emp-dashboard-client.vercel.app",
+      "https://emp-dashboard-client-git-main-aasemshoshari1998.vercel.app/",
+      "https://emp-dashboard-client-aasemshoshari1998.vercel.app/",
+    ],
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
