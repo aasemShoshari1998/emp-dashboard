@@ -93,6 +93,8 @@ function AddEmployee({ setAddEmployee }) {
 
       fetch("https://emp-dashboard-api.vercel.app/add-employee", {
         method: "POST",
+                mode: "no-cors",
+
         headers: {
           "Content-type": "application/json",
         },
