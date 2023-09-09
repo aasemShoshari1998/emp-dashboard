@@ -18,7 +18,7 @@ function VacationsComponent({ setAddSalary, state, updateState }) {
 
   useEffect(() => {
     const getEmployees = async () => {
-      const response = await fetch("http://localhost:8000/get-employees");
+      const response = await fetch("emp-dashboard-api.vercel.app/get-employees");
       const data = await response.json();
 
       setEmployees(data);
@@ -54,7 +54,7 @@ function VacationsComponent({ setAddSalary, state, updateState }) {
         loan: Number(loan.current.value),
       };
 
-      await fetch(`http://localhost:8000/add-salary`, {
+      await fetch(`emp-dashboard-api.vercel.app/add-salary`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
