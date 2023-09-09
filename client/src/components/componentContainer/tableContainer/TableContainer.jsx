@@ -39,11 +39,12 @@ function TableContainer({ table }) {
       if (table === "Employee") {
         setData(employees);
       } else if (table === "Salary") {
-        const response = await fetch("https://emp-dashboard-api.vercel.app/get-salaries");
+        const response = await fetch("https://emp-dashboard-api.vercel.app/get-salaries",{        mode: "no-cors"
+});
         const data = await response.json();
         setData(data);
       } else if (table === "Vacation") {
-        const response = await fetch("https://emp-dashboard-api.vercel.app/get-vacations");
+        const response = await fetch("https://emp-dashboard-api.vercel.app/get-vacations",{        mode: "no-cors"});
         const data = await response.json();
         setData(data);
       }
@@ -63,12 +64,16 @@ function TableContainer({ table }) {
     if (e.target.value === "approve") {
       fetch(`https://emp-dashboard-api.vercel.app/approve-vacation/${vacationId}`, {
         method: "POST",
+                mode: "no-cors",
+
       }).then(() => {
         setComponentShouldUpdate(!componentShouldUpdate);
       });
     } else {
       fetch(`https://emp-dashboard-api.vercel.app/reject-vacation/${vacationId}`, {
         method: "POST",
+                mode: "no-cors",
+
       }).then(() => {
         setComponentShouldUpdate(!componentShouldUpdate);
       });
