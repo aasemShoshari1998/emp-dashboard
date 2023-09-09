@@ -9,8 +9,6 @@ function Delete({ id, data, setDelete, state, updateState }) {
     if (data === "Salary") {
       await fetch(`https://emp-dashboard-api.vercel.app/delete-salary/${id}`, {
         method: "POST",
-                mode: "no-cors",
-
         headers: {
           "Content-type": "application/json",
         },
@@ -21,8 +19,6 @@ function Delete({ id, data, setDelete, state, updateState }) {
     } else {
       await fetch(`https://emp-dashboard-api.vercel.app/delete-employee/${id}`, {
         method: "POST",
-                mode: "no-cors",
-
         headers: {
           "Content-type": "application/json",
         },
