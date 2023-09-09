@@ -7,7 +7,7 @@ function Delete({ id, data, setDelete, state, updateState }) {
   const handleDelete = async (id) => {
     dispatch({ type: "DARKEN", payload: false });
     if (data === "Salary") {
-      await fetch(`https://emp-dashboard-client.vercel.app/delete-salary/${id}`, {
+      await fetch(`https://emp-dashboard-api.vercel.app/delete-salary/${id}`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -17,7 +17,7 @@ function Delete({ id, data, setDelete, state, updateState }) {
         setDelete(false);
       });
     } else {
-      await fetch(`https://emp-dashboard-client.vercel.app/delete-employee/${id}`, {
+      await fetch(`https://emp-dashboard-api.vercel.app/delete-employee/${id}`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
