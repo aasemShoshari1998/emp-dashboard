@@ -49,8 +49,6 @@ function RequestVacationForm() {
       };
       await fetch(`https://emp-dashboard-api.vercel.app/request-vacation`, {
         method: "POST",
-                mode: "no-cors",
-
         headers: {
           "Content-type": "application/json",
         },
