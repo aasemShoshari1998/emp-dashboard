@@ -48,7 +48,7 @@ app.use("/upload", upload.array("files"), async (req, res) => {
 });
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect("mongodb+srv://aasemshoshari:captain10majed@emp-dashboard.wer2fpu.mongodb.net/")
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
