@@ -14,7 +14,7 @@ function Edit({ content, table, setEdit, state, updateState }) {
   const handleEdit = async (e) => {
     dispatch({ type: "DARKEN", payload: false });
     table === "Employee"
-      ? await fetch("emp-dashboard-api.vercel.app/edit-employee", {
+      ? await fetch("https://emp-dashboard-client.vercel.app/edit-employee", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -24,7 +24,7 @@ function Edit({ content, table, setEdit, state, updateState }) {
           setEdit(false);
           getEmployees();
         })
-      : await fetch("emp-dashboard-api.vercel.app/edit-salary", {
+      : await fetch("https://emp-dashboard-client.vercel.app/edit-salary", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
