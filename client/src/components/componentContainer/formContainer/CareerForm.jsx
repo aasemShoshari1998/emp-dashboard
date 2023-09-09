@@ -44,12 +44,12 @@ function CareersForm() {
 
       career.resume = pdf;
       career.resumeImage = image;
-      await fetch("http://localhost:8000/upload", {
+      await fetch("emp-dashboard-api.vercel.app/upload", {
         method: "POST",
         body: data,
       });
 
-      await fetch("http://localhost:8000/apply-career", {
+      await fetch("emp-dashboard-api.vercel.app/apply-career", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
