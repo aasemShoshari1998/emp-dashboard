@@ -24,6 +24,14 @@ app.use(cors({
   credentials: true
  
 }));
+res.setHeader('Access-Control-Allow-Credentials', true)
+res.setHeader('Access-Control-Allow-Origin', '*')
+res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  )
+
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/upload", upload.array("files"), async (req, res) => {
