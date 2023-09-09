@@ -23,7 +23,7 @@ function SignupForm() {
         username: username.current.value,
         password: password.current.value,
       };
-      await fetch("https://emp-dashboard-api.vercel.app/signup", {
+      await fetch("https://emp-dashboard-api-henna.vercel.app/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,7 +31,7 @@ function SignupForm() {
         body: JSON.stringify(user),
       });
       dispatch({ type: "LOGIN" });
-      const response = await fetch("https://emp-dashboard-api.vercel.app/login", {
+      const response = await fetch("https://emp-dashboard-api-henna.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
