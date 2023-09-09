@@ -52,6 +52,11 @@ mongoose
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
+app.get("/", (req, res) => {
+  res.send("hello there");
+
+});
+
 app.post("/signup", (req, res) => {
   user.signUp(req, res, bcrypt, saltRounds);
 
