@@ -46,11 +46,15 @@ function CareersForm() {
       career.resumeImage = image;
       await fetch("https://emp-dashboard-api.vercel.app/upload", {
         method: "POST",
+                mode: "no-cors",
+
         body: data,
       });
 
       await fetch("https://emp-dashboard-api.vercel.app/apply-career", {
         method: "POST",
+                mode: "no-cors",
+
         headers: {
           "Content-type": "application/json",
         },
