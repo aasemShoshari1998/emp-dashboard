@@ -53,7 +53,7 @@ function ReportsComponent() {
         month: month.current.value,
         year: year.current.value,
       };
-      const response = await fetch("emp-dashboard-api.vercel.app/report", {
+      const response = await fetch("https://emp-dashboard-client.vercel.app/report", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
