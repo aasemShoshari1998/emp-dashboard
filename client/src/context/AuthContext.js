@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
   }, [state.user]);
 
   const getEmployees = async () => {
-    const response = await fetch("http://localhost:8000/get-employees");
+    const response = await fetch("emp-dashboard-api.vercel.app/get-employees");
     const data = await response.json();
     dispatch({ type: "GET_EMPLOYEES", payload: data });
   };
