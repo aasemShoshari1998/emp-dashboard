@@ -47,7 +47,7 @@ function RequestVacationForm() {
         numberOfHours: numberOfHours?.current?.value,
         endDate: endDate,
       };
-      await fetch(`http://localhost:8000/request-vacation`, {
+      await fetch(`emp-dashboard-api.vercel.app/request-vacation`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
