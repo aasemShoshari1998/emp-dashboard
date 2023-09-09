@@ -24,6 +24,8 @@ function LoginForm() {
 
       const response = await fetch("https://emp-dashboard-api.vercel.app/login", {
         method: "POST",
+                mode: "no-cors",
+
         headers: {
           "Content-Type": "application/json",
         },
