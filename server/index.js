@@ -13,15 +13,15 @@ const cloudinary = require("./cloudinary");
 const upload = require("./multer");
 const path = require("path");
 const app = express();
+
+app.use(cors({
+    origin:"https://emp-dashboard-client.vercel.app"
+}))
+
 require("dotenv").config();
 const fs = require("fs");
 
 app.use(bodyParser.json());
-
-app.use(cors({
-    origin: 'https://emp-dashboard-client.vercel.app'
-}));
-
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/upload", upload.array("files"), async (req, res) => {
   const uploader = async (path) => await cloudinary.uploads(path, "Images");
