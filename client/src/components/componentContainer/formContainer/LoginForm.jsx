@@ -22,7 +22,7 @@ function LoginForm() {
       };
       dispatch({ type: "LOGIN" });
 
-      const response = await fetch("https://emp-dashboard-api.vercel.app/login", {
+      const response = await fetch("https://emp-dashboard-api-henna.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
