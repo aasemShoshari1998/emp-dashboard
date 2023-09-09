@@ -19,7 +19,7 @@ const fs = require("fs");
 app.use(bodyParser.json());
 // app.use(cors({ origin: "https://shoushclient.herokuapp.com" }));
 app.use(cors({
- origin : ["https://emp-dashboard-api.vercel.app/"],
+ origin : ["https://emp-dashboard-api.vercel.app"],
   methods:["POST","GET"],
   credentials: true
 }));
