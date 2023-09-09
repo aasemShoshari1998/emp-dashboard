@@ -17,14 +17,12 @@ require("dotenv").config();
 const fs = require("fs");
 
 app.use(bodyParser.json());
-app.use(cors({ 
-  origin: ["https://emp-dashboard-client.vercel.app"],
-  methods:["POST","GET"],
-  credentials:true
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH']
 
 }));
-
-
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/upload", upload.array("files"), async (req, res) => {
@@ -56,91 +54,70 @@ mongoose
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
-const allowCors = (fn) => async (req, res) => {
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  // another common pattern
-  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-  );
-  if (req.method === "OPTIONS") {
-    res.status(200).end();
-    return;
-  }
-  return await fn(req, res);
-};
-
 app.post("/signup", (req, res) => {
-  allowCors(user.signUp(req, res, bcrypt, saltRounds));
+  user.signUp(req, res, bcrypt, saltRounds);
 });
 
 app.post("/login", (req, res) => {
-  allowCors(user.logIn(req, res, bcrypt));
+  user.logIn(req, res, bcrypt);
 });
 
 app.post("/add-employee", (req, res) => {
-  allowCors(employee.addEmployee(req, res));
+  employee.addEmployee(req, res);
 });
 
 app.get("/get-employees", (req, res) => {
-  allowCors(employee.getEmployees(req, res));
+  employee.getEmployees(req, res);
 });
 
 app.post("/edit-employee", (req, res) => {
-  allowCors(employee.editEmployee(req, res));
+  employee.editEmployee(req, res);
 });
 
 app.post("/delete-employee/:id", (req, res) => {
-  allowCors(employee.deleteEmployee(req, res));
+  employee.deleteEmployee(req, res);
 });
 
 app.post("/request-vacation", (req, res) => {
-  allowCors(vacation.requestVacation(req, res));
+  vacation.requestVacation(req, res);
 });
 
 app.post("/approve-vacation/:id", (req, res) => {
-  allowCors(vacation.approveVacation(req, res));
+  vacation.approveVacation(req, res);
 });
 
 app.post("/reject-vacation/:id", (req, res) => {
-  allowCors(vacation.rejectVacation(req, res));
+  vacation.rejectVacation(req, res);
 });
 
 app.get("/get-vacations", (req, res) => {
-  allowCors(vacation.getVacations(req, res));
+  vacation.getVacations(req, res);
 });
 
 app.post("/add-salary", (req, res) => {
-  allowCors(salary.addSalary(req, res));
+  salary.addSalary(req, res);
 });
 
 app.get("/get-salaries", (req, res) => {
-  allowCors(salary.getSalaries(req, res));
+  salary.getSalaries(req, res);
 });
 
 app.post("/delete-salary/:id", (req, res) => {
-  allowCors(salary.deleteSalary(req, res));
+  salary.deleteSalary(req, res);
 });
 
 app.post("/edit-salary", (req, res) => {
-  allowCors(salary.editSalary(req, res));
+  salary.editSalary(req, res);
 });
 
 app.post("/report", (req, res) => {
-  allowCors(employee.getEmpReport(req, res));
+  employee.getEmpReport(req, res);
 });
 
 app.post("/apply-career", (req, res) => {
-  allowCors(career.applyToCareer(req, res));
+  career.applyToCareer(req, res);
 });
 
 app.listen(process.env.PORT || 8000, () => {
   console.log("listening at port 8000");
 });
-
