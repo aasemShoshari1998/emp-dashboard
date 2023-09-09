@@ -18,8 +18,7 @@ function VacationsComponent({ setAddSalary, state, updateState }) {
 
   useEffect(() => {
     const getEmployees = async () => {
-      const response = await fetch("https://emp-dashboard-api.vercel.app/get-employees",{        mode: "no-cors",
-});
+      const response = await fetch("https://emp-dashboard-api.vercel.app/get-employees",{mode: "no-cors"});
       const data = await response.json();
 
       setEmployees(data);
